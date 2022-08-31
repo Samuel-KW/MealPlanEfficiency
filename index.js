@@ -1,53 +1,12 @@
 const currency = require('currency.js');
 
-const fnGreedy = budget => {
-
-    let purchases = [];
-
-    for (let i = 0; i < itemList.length; ++i) {
-        const item = itemList[i];
-        const amount = Math.floor(budget / item.cost);
-
-        budget -= item.cost * amount; 
-        for (let j = 0; j < amount; ++j) purchases.push(i);
-    }
-
-    return purchases;
-
-};
-
-const fnRandom = budget => {
-
-    let purchases = [];
-
-    while (true) {
-
-        const items = itemsInBudget(budget);
-        console.log(items);
-        return [1];
-
-        if (items.length === 0) return purchases;
-        
-        const index = Math.floor(Math.random() * items.length);
-        budget -= items[index].cost;
-
-        if (budget <= 0) return purchases;
-        purchases.push(index);
-    } 
-};
-
-const fnLoss = (budget, items) => {
-    const sum = items.reduce((a, b) => a + itemList[b].cost, 0);
-    return budget - sum;
-};
-
 class Knapsack {
     constructor (itemList=[]) {
         this.itemList = itemList;
     }
 
     itemsInBudget (budget) {
-        return itemList.filter(e => e.cost.intValue <= budget.intValue);
+        return this.itemList.filter(e => e.cost.intValue <= budget.intValue);
     }
 
     randomInBudget (budget) {
@@ -56,7 +15,7 @@ class Knapsack {
     }
 
     totalCost (items) {
-        return items.reduce((a, b) => a.add(itemList[b].cost), currency(0));
+        return items.reduce((a, b) => a.add(this.itemList[b].cost), currency(0));
     }
 
     loss (budget, items) {
@@ -85,7 +44,7 @@ class Knapsack {
         
     }
 
-    findOptimal (budget, iterations)  {
+    fillItemsRandom (budget, iterations)  {
 
         let [items, minLoss] = this.fillRandom(budget);
     
@@ -100,6 +59,22 @@ class Knapsack {
 
         return [items, minLoss];
     }
+
+    // TODO Improve this horrible method
+    fillItemsGreedy (budget) {
+
+        let purchases = [];
+    
+        for (let i = 0; i < this.itemList.length; ++i) {
+            const item = this.itemList[i];
+            const amount = Math.floor(budget / item.cost);
+    
+            budget -= item.cost * amount; 
+            for (let j = 0; j < amount; ++j) purchases.push(i);
+        }
+    
+        return purchases;
+    };
 }
 
 class FoodItem {
@@ -223,12 +198,13 @@ const itemList = [
 ];
 
 
-const budget = currency(29.95);
+const budget = currency(29.65);
 const kp = new Knapsack(itemList);
 
-const [items, loss] = kp.findOptimal(budget, 1000);
+let items = [],
+    loss = budget;
+
+[items, loss] = kp.fillItemsRandom(budget, 1000);
+
 console.log(items.map(e => e.name));
 console.log(loss.format());
-
-
-
