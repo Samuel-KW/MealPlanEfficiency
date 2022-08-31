@@ -1,0 +1,11 @@
+{
+  "name": "moneyspender",
+  "version": "1.0.0",
+  "description": "Optimal items to purchase to spend entire meal plan",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Samuel Walls",
+  "license": "ISC"
+}
