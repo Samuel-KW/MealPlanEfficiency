@@ -211,11 +211,7 @@ let itemList = [
     }),
 
     new FoodItem({
-<<<<<<< HEAD
         name: 'Mexican Cheese',
-=======
-        name: 'Mexican Cheesee',
->>>>>>> 365b2c3569a47bffebbbfff0e08c77246809a11e
         cost: 5.99
     }),
 
