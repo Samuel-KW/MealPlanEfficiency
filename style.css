@@ -9,6 +9,10 @@ table {
     text-align: left;
     padding: 8px;
   }
+
+  th {
+    text-transform: capitalize;
+  }
   
   tr:nth-child(even) {
     background-color: #dddddd;

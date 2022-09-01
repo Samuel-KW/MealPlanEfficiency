@@ -8,12 +8,51 @@
     <link rel='stylesheet' type='text/css' media='screen' href='style.css'>
 </head>
 <body>
+    
+    <div id="outputDetails">
 
-    
-<table id="itemList"></table>
-    
+        <h3>Inputs</h3>
+        <div>
+            <span>Daily Allowance: $</span><input type="number" id="allowance" value="29.65"></input>
+        </div>
+
+        <div>
+            <span>Current Money: $</span><input type="number" id="money" value="13.65"></input>
+        </div>
+
+        <div>
+            <span>Required Items</span>
+            <textarea placeholder="Item names..." id="requiredFoods"></textarea>
+        </div>
+
+        <div>
+            <span>Algorithm iterations: </span><input type="number" id="iterations" value="1000"></input>
+        </div>
+
+        <button id="run">Run Algorithm</button>
+
+        <br>
+
+        <h3>Predictions</h3>
+
+        <table id="itemList"></table>
+
+        <div>
+            <span>Loss: $</span><span id="loss">0.00</span>
+        </div>
+
+        <div>
+            <span>Calculation time (ms): </span><span id="calcTime">0</span>
+        </div>
+
+        <h3>Avaliable Store Items</h3>
+        <table id="storeItemList"></table>
+
+    </div>
+
     <script src='scripts/currency.js'></script>
     <script src='scripts/allowance.js'></script>
+    <script src='scripts/foodItems.js'></script>
     <script src='scripts/index.js'></script>
 </body>
 </html>

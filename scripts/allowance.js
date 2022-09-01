@@ -31,7 +31,7 @@ class Allowance {
     }
  
     purchaseItemsByName (names) {
-        const items = names.map(name => this.findItemByName(name));
+        const items = names.map(name => this.findItemByName(name)).filter(e => e !== undefined);
         return this.purchaseItems(items);
     }
  
@@ -44,7 +44,7 @@ class Allowance {
     }
  
     itemsInBudget (budget) {
-        return this.itemList.filter(e => e.cost.intValue <= budget.intValue);
+        return this.itemList.filter(e => e.cost.intValue <= budget.intValue) || [];
     }
  
     randomInBudget (budget) {
@@ -66,7 +66,8 @@ class Allowance {
         const purchases = [];
  
         let options = this.itemsInBudget(budget);
-   
+        if (options.length < 1) return [purchases, budget];
+
         do {
    
             const item = options[Math.floor(Math.random() * options.length)];

@@ -1,4 +1,4 @@
-const create_table = (parent, values) => {
+const createTable = (parent, values) => {
     const headers = Object.keys(itemList[0]);
     const elem_header = document.createElement('tr');
     for (let i = 0; i < headers.length; ++i) {
@@ -23,147 +23,59 @@ const create_table = (parent, values) => {
     }
 };
 
-class FoodItem {
-    constructor (details={}) {
-        this.name = details.name ?? 'Unknown’'
-        this.cost = currency(details.cost);
-        this.calories = details.calories ?? -1;
-        this.proteins = details.proteins ?? -1;
-        this.weight = details.weight ?? 1;
+const updateUI = (options={}) => {
+    options.allowance && (document.getElementById('allowance').value = options.allowance);
+    options.money && (document.getElementById('money').value = options.money);
+    options.loss && (document.getElementById('loss').textContent = options.loss);
+    options.iterations && (document.getElementById('iterations').value = options.iterations);
+    options.calcTime && (document.getElementById('calcTime').textContent = options.calcTime);
+};
+
+const runAlgorithm = () => {
+
+};
+ 
+
+
+document.getElementById('run').addEventListener('click', () => {
+
+    const budget = currency(document.getElementById('money').value);
+    const iterations = Number(document.getElementById('iterations').value);
+    const allowance = new Allowance(budget, itemList);
+    
+    const requiredFoods = document.getElementById('requiredFoods');
+    
+    let requiredFoodList = requiredFoods.value.trim();
+    if (requiredFoods.value) {
+        requiredFoodList = requiredFoodList.split('\n').map(e => e.trim()).filter(e => e);
+        allowance.purchaseItemsByName(requiredFoodList);
     }
-}
 
-const itemList = [
- 
-    new FoodItem({
-        name: 'Turkey and Cheese Pita Sandwich',
-        cost: 6.29
-    }),
- 
-    new FoodItem({
-        name: 'Roast Beef Onion Roll Sandwich',
-        cost: 7.59,
-        calories: 490
-    }),
- 
-    new FoodItem({
-        name: 'Lean Cuisine',
-        cost: 4.29,
-        calories: 300,
-        proteins: 17
-    }),
- 
-    new FoodItem({
-        name: 'Summertime Fruit Cup',
-        cost: 4.39
-    }),
- 
-    new FoodItem({
-        name: 'Ramen',
-        cost: 0.69
-    }),
- 
-    new FoodItem({
-        name: 'Reese\'s Pieces Peanut Butter Cups',
-        cost: 0.10,
-        calories: 44
-    }),
- 
-    new FoodItem({
-        name: 'Amy\'s Bowl',
-        cost: 7.89,
-        calories: 44
-    }),
- 
-    new FoodItem({
-        name: 'General Tso\'s Tofu',
-        cost: 8.19,
-        proteins: 15
-    }),
- 
-    new FoodItem({
-        name: 'Chow Mein',
-        cost: 2.29
-    }),
- 
-    new FoodItem({
-        name: 'Spicy Miso Ramen',
-        cost: 5.99
-    }),
- 
-    new FoodItem({
-        name: 'Teriyaki Noodle Bowl',
-        cost: 5.99
-    }),
- 
-    new FoodItem({
-        name: 'Hot and Sour Soup Bowl',
-        cost: 5.99
-    }),
- 
-    new FoodItem({
-        name: 'Kungpao Noodle Bowl',
-        cost: 5.99
-    }),
- 
-    new FoodItem({
-        name: 'Miso Soup Bowl',
-        cost: 5.99
-    }),
- 
-    new FoodItem({
-        name: 'Bowl Noodle Soup',
-        cost: 2.19
-    }),
- 
-    new FoodItem({
-        name: 'Spicy Miso Ramen',
-        cost: 5.99
-    }),
- 
-    new FoodItem({
-        name: 'Pastrami Reuben Onion Sandwich',
-        cost: 7.59,
-        calories: 470
-    }),
- 
-    new FoodItem({
-        name: 'Ham and Swiss Croissant',
-        cost: 6.99
-    }),
- 
-    new FoodItem({ // TODO Double check
-        name: 'Ham Snack Kit',
-        cost: 4.39
-    }),
- 
-    new FoodItem({ // TODO Double check
-        name: 'Chef Salad',
-        cost: 7.69
-    }),
-];
+    
+    // Evaluate efficiency of calculating purchases
+    const start = window.performance.now();
+    let [items, loss] = allowance.fillKnapsack(iterations);
+    const end = window.performance.now();
 
+    // Sort items from most expensive to cheapest
+    items = items.sort((a, b) => b.cost.intValue - a.cost.intValue);
 
+    //console.log(items.map(e => e.name));
+    //console.log(loss.format());
 
+    const elem_purchases = document.getElementById('itemList');
+    elem_purchases.innerHTML = '';
+    createTable(elem_purchases, items);
+    
 
- 
-const budget = currency(29.65);
-const allowance = new Allowance(budget, itemList);
- 
-allowance.purchaseItemsByName([
-    'Roast Beef Onion Roll Sandwich',
-    'Summertime Fruit Cup'
-]);
- 
-const [items, loss] = allowance.fillKnapsack(1000);
- 
-console.log(items.map(e => e.name));
-console.log(loss.format());
- 
-const parent = document.getElementById('itemList');
-parent.innerHTML = ''
+    updateUI({
+        money: budget.format({ symbol: ''}),
+        loss: loss.format({ symbol: ''}),
+        calcTime: end - start
+    });
 
-create_table(parent, items);
- 
- 
+});
+
+createTable(document.getElementById('storeItemList'), itemList);
+
 
