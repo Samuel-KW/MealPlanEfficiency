@@ -32,6 +32,36 @@ let itemList = [
         name: 'Summertime Fruit Cup',
         cost: 4.39
     }),
+
+    new FoodItem({
+        name: 'Cantaloupe Cup',
+        cost: 4.39
+    }),
+
+    new FoodItem({
+        name: 'Strawberries & Cream',
+        cost: 4.39
+    }),
+
+    new FoodItem({
+        name: 'Southwest Chicken Pasta Salad',
+        cost: 4.39
+    }),
+
+    new FoodItem({
+        name: 'Spicy Thai Noodle Salad',
+        cost: 4.39
+    }),
+
+    new FoodItem({
+        name: 'Caprese Pasta Salad',
+        cost: 4.39
+    }),
+
+    new FoodItem({
+        name: 'Summertime Fruit (Large)',
+        cost: 9.19
+    }),
  
     new FoodItem({
         name: 'Ramen',
@@ -57,8 +87,52 @@ let itemList = [
     }),
  
     new FoodItem({
-        name: 'Chow Mein',
-        cost: 2.29
+        name: 'Chow Mein Teriyaki Beef',
+        cost: 2.29,
+        calories: 510,
+        proteins: 10
+    }),
+
+    new FoodItem({
+        name: 'Bowl Noodle Soup Chicken Flavor',
+        cost: 2.19,
+        calories: 390,
+        proteins: 9
+    }),
+    
+    new FoodItem({
+        name: 'Tandoori Rice',
+        cost: 4.99
+    }),
+
+    new FoodItem({
+        name: 'Jasmine Rice',
+        cost: 4.59
+    }),
+
+    new FoodItem({
+        name: 'Spam',
+        cost: 6.39
+    }),
+
+    new FoodItem({
+        name: 'Whole Kernal Corn',
+        cost: 2.79
+    }),
+
+    new FoodItem({
+        name: 'Quinoa Quick Cup with Jalapeno & Roasted Pepper',
+        cost: 5.69
+    }),
+
+    new FoodItem({
+        name: 'White Rice Sticky',
+        cost: 3.99
+    }),
+
+    new FoodItem({
+        name: 'Eggs (6)',
+        cost: 3.99
     }),
  
     new FoodItem({
@@ -106,16 +180,67 @@ let itemList = [
         name: 'Ham and Swiss Croissant',
         cost: 6.99
     }),
+
+    new FoodItem({
+        name: 'Cajun Pita Sandwich',
+        calories: 790,
+        proteins: 27,
+        cost: 6.29
+    }),
+
+    new FoodItem({
+        name: 'Yakisoba Noodles Chicken Flavor',
+        calories: 510,
+        proteins: 11,
+        cost: 2.19
+    }),
+
+    new FoodItem({
+        name: 'Grilled Caribbean Salad',
+        cost: 7.69
+    }),
+
+    new FoodItem({
+        name: 'Hawaiian Sweet Rolls',
+        cost: 2.39
+    }),
+
+    new FoodItem({
+        name: 'Monterey Jack Cheese',
+        cost: 5.99
+    }),
+
+    new FoodItem({
+        name: 'Mexican Cheese',
+        cost: 5.99
+    }),
+
+    new FoodItem({
+        name: 'Sharp Chedar Cheese',
+        cost: 5.99
+    }),
+
+    new FoodItem({
+        name: 'Dole Fruit Cups',
+        cost: 2.49
+    }),
+
+    new FoodItem({ // TODO Triple check
+        name: 'Chef Salad',
+        cost: 7.69
+    }),
+
+    new FoodItem({ // TODO Double check
+        name: 'Fried Chicken Salad',
+        cost: 7.69
+    }),
  
     new FoodItem({ // TODO Double check
         name: 'Ham Snack Kit',
         cost: 4.39
     }),
  
-    new FoodItem({ // TODO Double check
-        name: 'Chef Salad',
-        cost: 7.69
-    }),
+    
 ];
 
 itemList = itemList.sort((a, b) => b.cost.intValue - a.cost.intValue);
