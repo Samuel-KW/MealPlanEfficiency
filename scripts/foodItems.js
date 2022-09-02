@@ -12,6 +12,12 @@ class FoodItem {
 let itemList = [
  
     new FoodItem({
+        tags: ['easy', 'fruit'],
+        name: 'Fruit',
+        cost: 0.99
+    }),
+
+    new FoodItem({
         tags: ['easy', 'meal'],
         name: 'Turkey and Cheese Pita Sandwich',
         cost: 6.29
