@@ -51,24 +51,6 @@ let itemList = [
     }),
 
     new FoodItem({
-        tags: ['easy', 'salad', 'meal'],
-        name: 'Southwest Chicken Pasta Salad',
-        cost: 4.39
-    }),
-
-    new FoodItem({
-        tags: ['easy', 'salad', 'meal'],
-        name: 'Spicy Thai Noodle Salad',
-        cost: 4.39
-    }),
-
-    new FoodItem({
-        tags: ['easy', 'salad', 'meal'],
-        name: 'Caprese Pasta Salad',
-        cost: 4.39
-    }),
-
-    new FoodItem({
         tags: ['easy', 'fruit'],
         name: 'Summertime Fruit (Large)',
         cost: 9.19
@@ -117,50 +99,6 @@ let itemList = [
         proteins: 9
     }),
     
-    new FoodItem({
-        tags: ['ingredient', 'rice'],
-        name: 'Tandoori Rice',
-        cost: 4.99
-    }),
-
-    new FoodItem({
-        tags: ['ingredient', 'rice'],
-        name: 'Jasmine Rice',
-        cost: 4.59
-    }),
-
-    new FoodItem({
-        tags: ['ingredient', 'meat'],
-        name: 'Spam',
-        cost: 6.39
-    }),
-
-    new FoodItem({
-        tags: ['ingredient', 'corn'],
-        name: 'Whole Kernal Corn',
-        cost: 2.79
-    }),
-
-    new FoodItem({
-        tags: ['easy', 'meal'],
-        name: 'Quinoa Quick Cup with Jalapeno & Roasted Pepper',
-        calories: 220,
-        proteins: 6,
-        cost: 5.69
-    }),
-
-    new FoodItem({
-        tags: ['ingredient', 'rice'],
-        name: 'White Rice Sticky',
-        cost: 3.99
-    }),
-
-    new FoodItem({
-        tags: ['ingredient', 'egg'],
-        name: 'Eggs (6)',
-        cost: 3.99
-    }),
- 
     new FoodItem({
         tags: ['easy', 'microwave', 'soup', 'meal'],
         name: 'Spicy Miso Ramen',
@@ -233,6 +171,58 @@ let itemList = [
     }),
 
     new FoodItem({
+        tags: ['fruit', 'easy', 'cheap'],
+        name: 'Dole Fruit Cups',
+        cost: 2.49
+    }),
+
+
+    /*
+    new FoodItem({
+        tags: ['ingredient', 'rice'],
+        name: 'Tandoori Rice',
+        cost: 4.99
+    }),
+
+    new FoodItem({
+        tags: ['ingredient', 'rice'],
+        name: 'Jasmine Rice',
+        cost: 4.59
+    }),
+
+    new FoodItem({
+        tags: ['ingredient', 'meat'],
+        name: 'Spam',
+        cost: 6.39
+    }),
+
+    new FoodItem({
+        tags: ['ingredient', 'corn'],
+        name: 'Whole Kernal Corn',
+        cost: 2.79
+    }),
+
+    new FoodItem({
+        tags: ['easy', 'meal'],
+        name: 'Quinoa Quick Cup with Jalapeno & Roasted Pepper',
+        calories: 220,
+        proteins: 6,
+        cost: 5.69
+    }),
+
+    new FoodItem({
+        tags: ['ingredient', 'rice'],
+        name: 'White Rice Sticky',
+        cost: 3.99
+    }),
+
+    new FoodItem({
+        tags: ['ingredient', 'egg'],
+        name: 'Eggs (6)',
+        cost: 3.99
+    }),
+
+    new FoodItem({
         tags: ['easy', 'salad', 'meal'],
         name: 'Grilled Caribbean Salad',
         cost: 7.69
@@ -263,9 +253,21 @@ let itemList = [
     }),
 
     new FoodItem({
-        tags: ['fruit', 'easy', 'cheap'],
-        name: 'Dole Fruit Cups',
-        cost: 2.49
+        tags: ['easy', 'salad', 'meal'],
+        name: 'Southwest Chicken Pasta Salad',
+        cost: 4.39
+    }),
+
+    new FoodItem({
+        tags: ['easy', 'salad', 'meal'],
+        name: 'Spicy Thai Noodle Salad',
+        cost: 4.39
+    }),
+
+    new FoodItem({
+        tags: ['easy', 'salad', 'meal'],
+        name: 'Caprese Pasta Salad',
+        cost: 4.39
     }),
 
     new FoodItem({
@@ -285,7 +287,7 @@ let itemList = [
         name: 'Ham Snack Kit',
         cost: 4.39
     }),
- 
+    */
     
 ];
 
