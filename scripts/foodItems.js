@@ -147,6 +147,15 @@ let itemList = [
         name: 'Spicy Miso Ramen',
         cost: 5.99
     }),
+    
+    new FoodItem({
+        tags: ['easy', 'microwave', 'soup', 'meal'],
+        name: 'Pad Thai Noodle Bowl',
+        weight: 0, // Would not recommend this
+        cost: 5.99,
+        calories: 490,
+        proteins: 15
+    }),
  
     new FoodItem({
         tags: ['easy', 'meal', 'sandwich'],
@@ -182,7 +191,6 @@ let itemList = [
         name: 'Dole Fruit Cups',
         cost: 2.49
     }),
-
 
     /*
     new FoodItem({
