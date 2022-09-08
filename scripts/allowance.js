@@ -1,12 +1,21 @@
 class Allowance {
-    constructor (budget, itemList) {
+    constructor (budget, itemList, preferences) {
         this.budget = budget;
         this.itemList = itemList;
+        this.preferences = preferences;
    
         this.purchases = [];
         this.money = this.budget;
     }
  
+    calculateScore(items, loss) {
+
+        let score = 0;
+
+        // Add loss to price
+
+    }
+
     fillKnapsack (iterations) {
         const [items, loss] = this.fillItemsRandom(this.money, iterations);
 
@@ -66,6 +75,10 @@ class Allowance {
         const purchases = [];
  
         let options = this.itemsInBudget(budget);
+
+        // Filter based on preferences
+        options = options.filter(item => preferences.filter(item));
+
         if (options.length < 1) return [purchases, budget];
 
         do {

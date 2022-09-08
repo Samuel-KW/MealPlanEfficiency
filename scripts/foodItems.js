@@ -14,6 +14,7 @@ let itemList = [
     new FoodItem({
         tags: ['easy', 'fruit'],
         name: 'Fruit',
+        calories: 100,
         cost: 0.99
     }),
 
