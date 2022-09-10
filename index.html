@@ -5,13 +5,20 @@
     <meta http-equiv='X-UA-Compatible' content='IE=edge'>
     <title>Meal Plan Optimizer</title>
     <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Ubuntu:regular,bold&subset=Latin">
     <link rel='stylesheet' type='text/css' media='screen' href='style.css'>
 </head>
 <body>
     
-    <div id="outputDetails">
-
-        <h3>Inputs</h3>
+    <nav id="navBar">
+        <span id="navInputs" class="selected">INPUTS</span>
+        <span id="navOuput">OUTPUT</span>
+        <span id="navStore">STORE</span>
+        <span id="navFavorites">FAVORITES</span>
+        <span>MEAL PLAN OPTIMIZER</span>
+    </nav>
+    
+    <content id="tabInputs" class="selected">
         <div>
             <span>Daily Allowance: $</span><input type="number" id="allowance" value="29.65"></input>
         </div>
@@ -30,6 +37,25 @@
         </div>
 
         <button id="run">Run Algorithm</button>
+    </content>
+
+    <content id="tabOutput">
+
+    </content>
+
+    <content id="tabStore">
+
+    </content>
+
+    <content id="tabFavorites">
+
+    </content>
+
+
+    <div id="outputDetails" style="display: none;">
+
+        <h3>Inputs</h3>
+        
 
         <br>
 

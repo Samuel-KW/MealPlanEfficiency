@@ -1,19 +1,96 @@
-table {
-    font-family: arial, sans-serif;
-    border-collapse: collapse;
-    width: 100%;
-  }
-  
-  td, th {
-    border: 1px solid #dddddd;
-    text-align: left;
-    padding: 8px;
-  }
+:root {
+	--bg: #212121;
+	--bg-header: #121212;
+	--bg-input: #2E2E2E;
+	--text-title: #313131;
+	--text-heading: #A5A5A5;
+	--text-content: #E3E3E3;
+	--highlight: #BB86FC;
+}
 
-  th {
-    text-transform: capitalize;
-  }
-  
-  tr:nth-child(even) {
-    background-color: #dddddd;
-  }
+* {
+	box-sizing: border-box;
+}
+
+html, body {
+	font-family: Ubuntu, "times new roman", times, roman, serif;
+	background-color: var(--bg);
+	color: var(--text-content);
+	padding: 0;
+	margin: 0;
+	top: 0; left: 0;
+}
+
+nav {
+	box-shadow: 0px 3px 5px #181818;
+	background-color: var(--bg-header);
+	justify-content: flex-start;
+	margin-bottom: 10px;
+	flex-wrap: nowrap;
+	display: flex;
+}
+
+nav .selected {
+	border-bottom: 2px solid var(--highlight);
+	color: var(--highlight);
+	font-weight: 600;
+}
+
+nav span {
+	color: var(--text-heading);
+	cursor: pointer;
+	padding: 30px;
+	width: 120px;
+}
+
+nav span:last-child {
+	color: var(--text-title);
+	text-align: right;
+	font-weight: 800;
+	cursor: default;
+	flex: 1;
+}
+
+@media only screen and (max-width: 600px) {
+	nav {
+		flex-wrap: wrap;
+	}
+
+	nav span {
+		padding: 10px;
+		width: 100%;
+		flex: 100%;
+	}
+
+	nav span:last-child {
+		display: none;
+	}
+}
+
+table {
+	font-family: arial, sans-serif;
+	border-collapse: collapse;
+	width: 100%;
+}
+
+td, th {
+	border: 1px solid #dddddd;
+	text-align: left;
+	padding: 8px;
+}
+
+th {
+	text-transform: capitalize;
+}
+
+tr:nth-child(even) {
+	background-color: #dddddd;
+}
+
+content {
+	display: none;
+}
+
+content.selected {
+	display: block;
+}
