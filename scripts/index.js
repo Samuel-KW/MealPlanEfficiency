@@ -35,13 +35,16 @@ const runAlgorithm = () => {
 
 };
  
+const forcedTagMgr = new TagManager(document.getElementById('forcedTagManager'));
+const deniedTagMgr = new TagManager(document.getElementById('deniedTagManager'));
 
+const preferences = new Preferences(forcedTagMgr, deniedTagMgr);
 
 document.getElementById('run').addEventListener('click', () => {
 
     const budget = currency(document.getElementById('money').value);
     const iterations = Number(document.getElementById('iterations').value);
-    const allowance = new Allowance(budget, itemList);
+    const allowance = new Allowance(budget, itemList, preferences);
     
     const requiredFoods = document.getElementById('requiredFoods');
     
@@ -77,5 +80,3 @@ document.getElementById('run').addEventListener('click', () => {
 });
 
 createTable(document.getElementById('storeItemList'), itemList);
-
-
