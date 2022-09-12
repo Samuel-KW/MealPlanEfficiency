@@ -19,35 +19,35 @@
     </nav>
     
     <content id="tabInputs" class="selected">
-        <div>
-            <span>Daily Allowance: $</span><input type="number" id="allowance" value="29.65"></input>
+        <div class="section">
+            <span>Daily Allowance: $</span><input type="number" id="allowance" class="underlined" value="29.65"></input>
         </div>
 
-        <div>
-            <span>Current Money: $</span><input type="number" id="money" value="18.97"></input>
+        <div class="section">
+            <span>Current Money: $</span><input type="number" id="money" class="underlined" value="18.97"></input>
         </div>
 
-        <div>
-            <span>Required Items</span>
-            <textarea placeholder="Item names..." id="requiredFoods"></textarea>
-        </div>
-
-        <div>
+        <div class="section">
             <h3>Forced Tags</h3>
-            <div id="forcedTagManager"></div>
+            <div id="forcedTagManager" class="underlined"></div>
         </div>
         
-        <div>
+        <div class="section">
 
             <h3>Disallowed Tags</h3>
-            <div id="deniedTagManager"></div>
+            <div id="deniedTagManager" class="underlined"></div>
         </div>
 
-        <div>
-            <span>Algorithm iterations: </span><input type="number" id="iterations" value="1000"></input>
+        <div class="section">
+            <span>Required Items</span>
+            <textarea placeholder="Item names..." id="requiredFoods" class="underlined ta-vertical"></textarea>
         </div>
 
-        <button id="run">Run Algorithm</button>
+        <div class="section">
+            <span>Algorithm iterations: </span><input type="number" id="iterations" class="underlined" value="1000"></input>
+        </div>
+
+        <button id="run" class="btn-main">RUN ALGORITHM</button>
     </content>
 
     <content id="tabOutput">

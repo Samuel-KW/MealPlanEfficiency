@@ -2,6 +2,7 @@
 	--bg: #212121;
 	--bg-header: #121212;
 	--bg-input: #2E2E2E;
+	--text-btn: #0C0412;
 	--text-title: #313131;
 	--text-heading: #A5A5A5;
 	--text-content: #E3E3E3;
@@ -51,22 +52,6 @@ nav span:last-child {
 	flex: 1;
 }
 
-@media only screen and (max-width: 600px) {
-	nav {
-		flex-wrap: wrap;
-	}
-
-	nav span {
-		padding: 10px;
-		width: 100%;
-		flex: 100%;
-	}
-
-	nav span:last-child {
-		display: none;
-	}
-}
-
 table {
 	font-family: arial, sans-serif;
 	border-collapse: collapse;
@@ -88,9 +73,79 @@ tr:nth-child(even) {
 }
 
 content {
+	justify-content: center;
+    flex-direction: row;
+    flex-wrap: wrap;
 	display: none;
 }
 
 content.selected {
-	display: block;
+	display: flex;
+}
+
+content .section {
+	border-bottom: 2px solid transparent;
+	box-shadow: 0px 3px 5px #181818;
+	background-color: var(--bg-input);
+	border-radius: 5px 5px 0 0;
+	padding: 10px;
+	margin: 10px;
+	width: 40%;
+}
+
+content .section:focus-within {
+	border-bottom: 2px solid var(--highlight);
+}
+
+input {
+	border: none;
+}
+
+.btn-main {
+	background-color: var(--bg-input);
+	transition: all 250ms ease;
+	color: var(--highlight);
+	border-radius: 5px;
+	font-weight: 700;
+	cursor: pointer;
+	min-width: 20%;
+	margin: 10px;
+	border: none;
+	height: 50px;
+	width: 50%;
+}
+
+.btn-main:hover {
+	background-color: var(--highlight);
+	color: var(--text-btn);
+}
+
+.ta-vertical {
+	resize: vertical;
+	width: 100%;
+}
+
+@media only screen and (max-width: 600px) {
+	nav {
+		flex-wrap: wrap;
+	}
+
+	nav span {
+		padding: 10px;
+		width: 100%;
+		flex: 100%;
+	}
+
+	nav span:last-child {
+		display: none;
+	}
+
+	content .section {
+		flex-direction: column;
+		width: 100%;
+	}
+
+	.btn-main {
+		width: 100%;
+	}
 }
