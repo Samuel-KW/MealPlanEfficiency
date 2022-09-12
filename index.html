@@ -1,8 +1,10 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
     <meta charset='utf-8'>
     <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <meta name="description" content="Meal plan optimizer created for SDSU students">
+    <meta name="theme-color" content="#212121"/>
     <title>Meal Plan Optimizer</title>
     <meta name='viewport' content='width=device-width, initial-scale=1'>
     <link href='https://fonts.googleapis.com/css?family=Ubuntu' rel='stylesheet'>
@@ -20,11 +22,11 @@
     
     <content id="tabInputs" class="selected">
         <div class="section">
-            <span>Daily Allowance: $</span><input type="number" id="allowance" class="underlined" value="29.65"></input>
+            <span>Daily Allowance: $</span><input type="number" id="allowance" class="underlined" value="29.65" aria-label="Allowance"></input>
         </div>
 
         <div class="section">
-            <span>Current Money: $</span><input type="number" id="money" class="underlined" value="18.97"></input>
+            <span>Current Money: $</span><input type="number" id="money" class="underlined" value="18.97" aria-label="Current money"></input>
         </div>
 
         <div class="section">
@@ -40,11 +42,11 @@
 
         <div class="section">
             <span>Required Items</span>
-            <textarea placeholder="Item names (each seperated by a new line)" id="requiredFoods" class="underlined ta-vertical"></textarea>
+            <textarea placeholder="Item names (each seperated by a new line)" id="requiredFoods" class="underlined ta-vertical" aria-label="Required items"></textarea>
         </div>
 
         <div class="section">
-            <span>Algorithm iterations: </span><input type="number" id="iterations" class="underlined" value="1000"></input>
+            <span>Algorithm iterations: </span><input type="number" id="iterations" class="underlined" value="1000" aria-label="Algorithm iterations"></input>
         </div>
 
         <button id="run" class="btn-main">RUN ALGORITHM</button>
