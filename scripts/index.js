@@ -35,8 +35,8 @@ const runAlgorithm = () => {
 
 };
  
-const forcedTagMgr = new TagManager(document.getElementById('forcedTagManager'));
-const deniedTagMgr = new TagManager(document.getElementById('deniedTagManager'));
+const forcedTagMgr = new TagManager('forcedTagManager');
+const deniedTagMgr = new TagManager('deniedTagManager');
 
 const preferences = new Preferences(forcedTagMgr, deniedTagMgr);
 

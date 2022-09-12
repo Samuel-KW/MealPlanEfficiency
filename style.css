@@ -2,6 +2,7 @@
 	--bg: #212121;
 	--bg-header: #121212;
 	--bg-input: #2E2E2E;
+	--bg-tag: #3F3F3F;
 	--text-btn: #0C0412;
 	--text-title: #313131;
 	--text-heading: #A5A5A5;
@@ -14,7 +15,7 @@
 }
 
 html, body {
-	font-family: Ubuntu, "times new roman", times, roman, serif;
+	font-family: 'Ubuntu', sans-serif;
 	background-color: var(--bg);
 	color: var(--text-content);
 	padding: 0;
@@ -123,6 +124,48 @@ input {
 .ta-vertical {
 	resize: vertical;
 	width: 100%;
+}
+
+.tag-container button {
+	background-color: var(--bg-tag);
+    border-radius: 5px;
+    color: #D1D1D1;
+	cursor: pointer;
+	border: none;
+    margin: 3px;
+    padding: 5px;
+}
+
+.tag-container button::before {
+    background-color: var(--bg-input);
+	background-image: url('icons/close.svg');
+	display: inline-block;
+    border-radius: 100%;
+    margin-right: 3px;
+	color: transparent;
+    content: "x";
+    height: 15px;
+    width: 15px;
+}
+
+.btn-add {
+	background-color: var(--bg-header);
+	color: var(--highlight);
+	margin-left: 5px;
+	padding: 5px 20px;
+	border-radius: 5px;
+	border: none;
+	cursor: pointer;
+}
+
+.btn-add::before {
+	background-image: url('icons/add.svg');
+	display: inline-block;
+	color: transparent;
+	margin-right: 5px;
+	height: 15px;
+	width: 15px;
+    content: "+";
 }
 
 @media only screen and (max-width: 600px) {

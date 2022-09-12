@@ -1,11 +1,25 @@
 class TagManager {
     constructor (parent) {
-        this.parent = parent;
+        this.id = parent;
+        this.parent = document.getElementById(parent);
 
+        
         this.container = this.createElements();
         this.tags = new Set();
+        
+        this.loadTags();
+        this.updateTags();
 
         this.parent.appendChild(this.container);
+    }
+
+    loadTags() {
+        const set = localStorage.getItem(`tags_${this.id}`);
+        this.tags = new Set(JSON.parse(set));
+    }
+
+    saveTags() {
+        localStorage.setItem(`tags_${this.id}`, JSON.stringify([...this.tags]));
     }
 
     addTag (string) {
@@ -19,6 +33,9 @@ class TagManager {
     }
 
     updateTags () {
+
+        this.saveTags();
+
         this.contOutput.innerHTML = '';
 
         this.tags.forEach(tag => {
@@ -27,6 +44,7 @@ class TagManager {
 
             btnTag.addEventListener('click', () => {
                 this.removeTag(tag);
+                this.saveTags();
                 btnTag.remove();
             });
 
@@ -45,7 +63,8 @@ class TagManager {
         contInput.appendChild(inpTag);
 
         const btnAdd = document.createElement('button');
-        btnAdd.textContent = 'Add';
+        btnAdd.textContent = 'ADD';
+        btnAdd.className = 'btn-add';
         contInput.appendChild(btnAdd);
 
         btnAdd.addEventListener('click', () => {
@@ -69,7 +88,7 @@ class TagManager {
 
 
         this.contOutput = document.createElement('div');
-
+        this.contOutput.className = 'tag-container';
 
         container.appendChild(contInput);
         container.appendChild(this.contOutput);
