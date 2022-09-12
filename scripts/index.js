@@ -45,9 +45,7 @@ document.getElementById('run').addEventListener('click', () => {
     const budget = currency(document.getElementById('money').value);
     const iterations = Number(document.getElementById('iterations').value);
     const allowance = new Allowance(budget, itemList, preferences);
-    
-    const requiredFoods = document.getElementById('requiredFoods');
-    
+        
     let requiredFoodList = requiredFoods.value.trim();
     if (requiredFoods.value) {
         requiredFoodList = requiredFoodList.split('\n').map(e => e.trim()).filter(e => e);
@@ -77,6 +75,12 @@ document.getElementById('run').addEventListener('click', () => {
         calcTime: end - start
     });
 
+});
+
+const requiredFoods = document.getElementById('requiredFoods');
+requiredFoods.value = localStorage.getItem('requiredFoods') ?? '';
+requiredFoods.addEventListener('change', function () {
+    window.localStorage.setItem('requiredFoods', this.value);
 });
 
 createTable(document.getElementById('storeItemList'), itemList);

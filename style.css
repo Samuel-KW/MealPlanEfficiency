@@ -8,6 +8,7 @@
 	--text-heading: #A5A5A5;
 	--text-content: #E3E3E3;
 	--highlight: #BB86FC;
+	--highlight-dim: #463754;
 }
 
 * {
@@ -100,6 +101,14 @@ content .section:focus-within {
 
 input {
 	border: none;
+	background: none;
+    border-bottom: 2px solid var(--highlight-dim);
+    color: var(--text-content);
+    font-weight: 600;
+}
+
+.section span {
+	color: var(--text-heading);
 }
 
 .btn-main {
@@ -122,7 +131,11 @@ input {
 }
 
 .ta-vertical {
+    color: var(--text-content);
 	resize: vertical;
+	background: none;
+    margin-top: 5px;
+    padding: 5px;
 	width: 100%;
 }
 
