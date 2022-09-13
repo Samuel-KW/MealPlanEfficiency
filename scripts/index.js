@@ -42,6 +42,9 @@ const preferences = new Preferences(forcedTagMgr, deniedTagMgr);
 
 document.getElementById('run').addEventListener('click', () => {
 
+    // Focus new tab
+    tabs.select('Output');
+
     const budget = currency(document.getElementById('money').value);
     const iterations = Number(document.getElementById('iterations').value);
     const allowance = new Allowance(budget, itemList, preferences);
@@ -84,3 +87,9 @@ requiredFoods.addEventListener('change', function () {
 });
 
 createTable(document.getElementById('storeItemList'), itemList);
+
+const tabs = new TabManager();
+tabs.addTab('Inputs', { selected: true });
+tabs.addTab('Output');
+tabs.addTab('Store');
+tabs.addTab('Favorites');
