@@ -192,7 +192,7 @@ let itemList = [
         cost: 2.49
     }),
 
-    /*
+    
     new FoodItem({
         tags: ['ingredient', 'rice'],
         name: 'Tandoori Rice',
@@ -302,7 +302,6 @@ let itemList = [
         name: 'Ham Snack Kit',
         cost: 4.39
     }),
-    */
     
 ];
 
