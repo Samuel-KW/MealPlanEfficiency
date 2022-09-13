@@ -74,9 +74,8 @@ class Allowance {
  
         const purchases = [];
  
-        let options = this.itemsInBudget(budget);
-
         // Filter based on preferences
+        let options = this.itemsInBudget(budget);
         options = options.filter(item => preferences.filter(item));
 
         if (options.length < 1) return [purchases, budget];
@@ -89,6 +88,7 @@ class Allowance {
             budget = budget.subtract(item.cost);
  
             options = this.itemsInBudget(budget);
+            options = options.filter(item => preferences.filter(item));
  
         } while (options.length > 0);
    
