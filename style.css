@@ -9,6 +9,23 @@
 	--text-content: #E3E3E3;
 	--highlight: #BB86FC;
 	--highlight-dim: #463754;
+	--box-shadow: #181818;
+	--tbl-even: #2e2931;
+}
+
+[data-theme="light"] {
+    --bg: #E5F3FE;
+	--bg-header: #6200EE;
+	--bg-input: #e9f5ff;
+	--bg-tag: #3F3F3F;
+	--text-btn: #0C0412;
+	--text-title: #313131;
+	--text-heading: #0C1618;
+	--text-content: #111111;
+	--highlight: #eafafc;
+	--highlight-dim: #5881f379;
+	--box-shadow: #cee3f2;
+	--tbl-even: #dcedfa;
 }
 
 * {
@@ -25,7 +42,7 @@ html, body {
 }
 
 nav {
-	box-shadow: 0px 3px 5px #181818;
+	box-shadow: 0px 3px 5px var(--box-shadow);
 	background-color: var(--bg-header);
 	justify-content: flex-start;
 	margin-bottom: 10px;
@@ -71,7 +88,7 @@ th {
 }
 
 tr:nth-child(even) {
-	background-color: #dddddd;
+	background-color: var(--tbl-even);
 }
 
 content {
@@ -87,7 +104,7 @@ content.selected {
 
 content .section {
 	border-bottom: 2px solid transparent;
-	box-shadow: 0px 3px 5px #181818;
+	box-shadow: 0px 3px 5px var(--box-shadow);
 	background-color: var(--bg-input);
 	border-radius: 5px 5px 0 0;
 	padding: 10px;
