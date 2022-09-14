@@ -2,7 +2,10 @@
 	--bg: #212121;
 	--bg-header: #121212;
 	--bg-input: #2E2E2E;
+	--bg-section: #2E2E2E;
 	--bg-tag: #3F3F3F;
+	--bg-btn: #BB86FC;
+	--text-tag: #121212; 
 	--text-btn: #0C0412;
 	--text-title: #313131;
 	--text-heading: #A5A5A5;
@@ -10,14 +13,17 @@
 	--highlight: #BB86FC;
 	--highlight-dim: #463754;
 	--box-shadow: #181818;
-	--tbl-even: #2e2931;
+	--tbl-even: #292929;
 }
 
 [data-theme="light"] {
     --bg: #E5F3FE;
 	--bg-header: #6200EE;
-	--bg-input: #e9f5ff;
-	--bg-tag: #3F3F3F;
+	--bg-input: #7781ff;
+	--bg-section: #e9f5ff;
+	--bg-tag: #c4d0ff;
+	--bg-btn: #100074;
+	--text-tag: #c6a7e9;
 	--text-btn: #0C0412;
 	--text-title: #313131;
 	--text-heading: #0C1618;
@@ -46,7 +52,6 @@ nav {
 	background-color: var(--bg-header);
 	justify-content: flex-start;
 	margin-bottom: 10px;
-	flex-wrap: nowrap;
 	position: sticky;
 	display: flex;
     top: 0;
@@ -74,21 +79,26 @@ nav span:last-child {
 }
 
 table {
+	box-shadow: 0px 3px 5px var(--box-shadow);
 	font-family: arial, sans-serif;
 	border-collapse: collapse;
-	display: block;
-	width: 100%;
 	overflow-x: auto;
+	width: 100vw;
+	margin: 10px;
 }
 
 td, th {
-	border: 1px solid var(--bg-input);
+	border: 1px solid var(--bg-section);
 	text-align: left;
 	padding: 8px;
 }
 
 th {
 	text-transform: capitalize;
+}
+
+tr {
+	width: 100vw;
 }
 
 tr:nth-child(even) {
@@ -109,7 +119,7 @@ content.selected {
 content .section {
 	border-bottom: 2px solid transparent;
 	box-shadow: 0px 3px 5px var(--box-shadow);
-	background-color: var(--bg-input);
+	background-color: var(--bg-section);
 	border-radius: 5px 5px 0 0;
 	padding: 10px;
 	margin: 10px;
@@ -163,7 +173,7 @@ input {
 .tag-container button {
 	background-color: var(--bg-tag);
     border-radius: 5px;
-    color: #D1D1D1;
+    color: var(--text-btn);
 	cursor: pointer;
 	border: none;
     margin: 3px;
@@ -171,7 +181,7 @@ input {
 }
 
 .tag-container button::before {
-    background-color: var(--bg-input);
+    background-color: var(--bg-section);
 	background-image: url('icons/close.svg');
 	display: inline-block;
     border-radius: 100%;
@@ -183,7 +193,7 @@ input {
 }
 
 .btn-add {
-	background-color: var(--bg-header);
+	background-color: var(--bg-btn);
 	color: var(--highlight);
 	margin-left: 5px;
 	padding: 5px 20px;
@@ -229,6 +239,10 @@ input {
 	content .section {
 		flex-direction: column;
 		width: 100%;
+	}
+
+	table {
+		display: block;
 	}
 
 	.btn-main {
