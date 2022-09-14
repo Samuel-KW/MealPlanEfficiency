@@ -30,7 +30,9 @@ nav {
 	justify-content: flex-start;
 	margin-bottom: 10px;
 	flex-wrap: nowrap;
+	position: sticky;
 	display: flex;
+    top: 0;
 }
 
 nav .selected {
@@ -57,11 +59,13 @@ nav span:last-child {
 table {
 	font-family: arial, sans-serif;
 	border-collapse: collapse;
+	display: block;
 	width: 100%;
+	overflow-x: auto;
 }
 
 td, th {
-	border: 1px solid #dddddd;
+	border: 1px solid var(--bg-input);
 	text-align: left;
 	padding: 8px;
 }
@@ -71,7 +75,7 @@ th {
 }
 
 tr:nth-child(even) {
-	background-color: #dddddd;
+	background-color: var(--bg-input);
 }
 
 content {
@@ -179,6 +183,15 @@ input {
 	height: 15px;
 	width: 15px;
     content: "+";
+}
+
+.textImportant {
+	color: var(--text-content) !important;
+}
+
+.money::before {
+	content: '$';
+	display: inline-block;
 }
 
 @media only screen and (max-width: 600px) {

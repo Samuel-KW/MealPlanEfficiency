@@ -22,11 +22,11 @@
     
     <content id="tabInputs">
         <div class="section">
-            <span>Daily Allowance: $</span><input type="number" id="allowance" class="underlined" value="29.65" aria-label="Allowance"></input>
+            <span>Daily Allowance: </span><span class="money"></span><input type="number" id="allowance" class="underlined" value="29.65" aria-label="Allowance"></input>
         </div>
 
         <div class="section">
-            <span>Current Money: $</span><input type="number" id="money" class="underlined" value="18.97" aria-label="Current money"></input>
+            <span>Current Money: </span><span class="money"></span><input type="number" id="money" class="underlined" value="18.97" aria-label="Current money"></input>
         </div>
 
         <div class="section">
@@ -57,12 +57,12 @@
 
         <table id="itemList"></table>
 
-        <div>
-            <span>Loss: $</span><span id="loss">0.00</span>
+        <div class="section">
+            <span class="textImportant">Loss: </span><span class="money" id="loss">0.00</span>
         </div>
 
-        <div>
-            <span>Calculation time (ms): </span><span id="calcTime">0</span>
+        <div class="section">
+            <span class="textImportant">Calculation time (ms): </span><span id="calcTime">0</span>
         </div>
     </content>
 
